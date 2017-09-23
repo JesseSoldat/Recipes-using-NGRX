@@ -10,6 +10,8 @@ import { AuthModule } from './auth/auth.module'
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { reducers } from './store/app.reducers';
+import { AuthEffects } from './auth/store/auth.effects';
 
 import { AppComponent } from './app.component';
 
@@ -23,8 +25,10 @@ import { AppComponent } from './app.component';
     CoreModule,
     SharedModule,
     ShoppingListModule,
-    // StoreRouterConnectingModule,
-    // !environment.production ? StoreDevtoolsModule.instrument() : []
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([AuthEffects]),
+    StoreRouterConnectingModule,
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from '../app-routing.module';
-
+import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   exports: [
     AppRoutingModule,
