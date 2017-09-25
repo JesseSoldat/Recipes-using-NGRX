@@ -60,7 +60,7 @@ export function recipeReducer(state = initialState, action: RecipesActions.Recip
       oldRecipes.splice(action.payload, 1);
       return {
         ...state,
-        recipe: oldRecipes
+        recipes: oldRecipes
       }
     default:
       return state;
