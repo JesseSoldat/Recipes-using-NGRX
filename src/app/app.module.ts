@@ -21,6 +21,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AuthModule,
     CoreModule,
     SharedModule,
